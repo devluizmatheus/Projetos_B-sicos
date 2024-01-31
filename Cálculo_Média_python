@@ -1,0 +1,11 @@
+import os
+
+while True:
+    try:
+        entrada = float(input('Digite Av1: '))
+        entrada_2 = float(input('Digite Av2: '))
+        entrada_3 = float(input('Digite Av3: '))
+        media = entrada, entrada_2, entrada_3
+        print('Média: ', sum(media)/ len(media))
+    except ValueError:
+        print('Digite apenas um número')
