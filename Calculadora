@@ -1,0 +1,28 @@
+#Calculadora Básica
+import os
+
+while True:
+    try:
+        entrada = float(input('Digite um número: '))
+        entrada_2 = input('Digite um Operador (+-*/): ')
+        entrada_3 = float(input('Digite outro número: '))
+
+        if entrada_2 not in '+-*/':
+            print('Digite um operador válido (+, -, *, /)')
+        else:
+            if entrada_2 == '+':
+                print(entrada + entrada_3)
+            elif entrada_2 == '-':
+                print(entrada - entrada_3)
+            elif entrada_2 == '*':
+                print(entrada * entrada_3)
+            elif entrada_2 == '/':
+                if entrada_3 != 0:
+                    print(entrada / entrada_3)
+                else:
+                    print("Não é possível dividir por zero.")
+                    continue  
+
+    except ValueError:
+        print("Por favor, digite um número válido.")
+    
