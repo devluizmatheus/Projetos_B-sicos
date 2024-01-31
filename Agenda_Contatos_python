@@ -1,0 +1,32 @@
+import os 
+
+contatos = []
+
+while True:
+    entrada = input('Agenda de Contatos \n[L]ista \n[A]dicionar \n[D]eletar  \nSelecione un para continuar: ').upper()
+    if entrada != 'L' and entrada != 'A' and entrada != 'D':
+        print('Digite apenas uma das opções.')
+        continue
+    if entrada == 'L':
+        os.system('cls')
+        for indice, elemento in enumerate(contatos):
+            print(f'===========================\n'
+                  f'{indice} Contato: {nome} \nTelefone: {numero} \nEmail: {email}\n'
+                '===========================')
+                  
+
+    if entrada == 'A':
+        os.system('cls')
+        nome = input('Adicione um nome: ')
+        numero = input('Adicione um número de Telefone: ')
+        email = input('Adicione um Email: ')
+        adicionar = nome, numero, email
+        contatos.append(adicionar)
+
+    if entrada == 'D':
+        os.system('cls')
+        deletar = int(input('Qual é o indice do contato que deseja excluir? '))
+        if 0 <= indice < len(contatos):
+            del contatos[deletar]
+        else:
+            print('Digite um indice válido')
