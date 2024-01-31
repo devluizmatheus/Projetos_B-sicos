@@ -1,0 +1,43 @@
+palavra_forca = 'VISMOKE'
+letras_acertadas = ''
+tentativas = 0
+
+while True:
+    entrada_0 = input('𓂀 Jogo da Forca 𓂀 \nRegras: \n1° Se erra 5 vezes você perde \n2° Você vai receber apenas uma dica \n3° Divirta-se'
+                  '\nJogar [S]im ou [N]ão? ').upper()
+
+    if entrada_0 != 'S' and entrada_0 != 'N':
+        print('Por favor! Digite apenas S ou N')
+        continue
+
+    elif entrada_0 == 'N':
+        print('Obrigado Pela atenção.')
+        break
+    
+    elif entrada_0 == 'S':
+        while True:
+            entrada = input('Escolha uma letra: ').upper
+            
+            if entrada not in palavra_forca:
+                tentativas += 1
+
+            if entrada in palavra_forca:
+                letras_acertadas += entrada
+
+            palavra_formada = ''
+            for letra_forca in palavra_forca:
+                if letra_forca in letras_acertadas:
+                    palavra_formada += letra_forca
+                else:
+                    palavra_formada += '_'
+
+            print('Palavra Formada: ', palavra_formada)
+
+            if tentativas == 5:
+                print('Você perdeu.....')
+                break
+
+            if palavra_formada == palavra_forca:
+                print('PARABÉNS!!! VOCÊ GANHOU')
+                print('A palavra era: Vismoke')
+                break
