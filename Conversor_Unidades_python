@@ -1,0 +1,54 @@
+#Conversor de Unidades
+import os 
+import re
+
+while True:
+    print('Temperatura\n[A]: °F-°C\n[B]: °C-°F \n[C]: K-°C\n[D]: °C-K')   
+    
+    
+    entrada = input('Escolha o tipo de conversão: ').upper()
+
+    if len(entrada) != 1:
+        print('Escolha apenas a opção A ou B')
+        continue
+    if entrada != str:
+        print('Digite apenas a letra')
+    if re.search('[^A-Za-z]', entrada):
+        print('Digite apenas letras.')
+
+    if entrada == 'A':
+        os.system('cls')
+        try:
+            tc = float(input('Escolha uma temperatura em °F para converter °C: '))
+            if tc:
+                print(tc - 32/1.8)
+            else:
+                print('Digite na escala de 0 a 100')
+        except ValueError:
+            print('Insira o valor da temperatura.')
+    elif entrada  == 'B':
+        os.system('cls')
+        try:
+            tf = float(input('Escolha uma temperatura em °C para converter °F: '))
+            if tf:
+                print(1.8*tf + 32)
+        except ValueError:
+            print('Insira o valor da temperatura.')
+
+    if entrada == 'C':
+        os.system('cls')
+        try:
+            tck = float(input('Escolha uma temperatura em K para °C: '))
+            if tck:
+                print(tck - 273)
+        except ValueError:
+            print('Insira o valor da temperatura.')
+
+    if entrada == 'D':
+        os.system('cls')
+        try:
+            tkc = float(input('Escolha uma temperatura em °C para K: '))
+            if tkc:
+                print(tkc + 273)
+        except ValueError:
+            print('Insira o valor da temperatura.')
