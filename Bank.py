@@ -33,6 +33,7 @@ def menu0():
             excedeu_saldo = valor > saldo
             excedeu_limite = valor > limite
             excedeu_saques = numero_saques >= LIMITE_SAQUES
+            nova_operacao(bem_vind0) 
 
             if excedeu_saldo:
                 print("Operação falhou! Você não tem saldo suficiente.")
@@ -55,6 +56,7 @@ def menu0():
 
         elif opcao == "0":
             break
+            
         else:
             print("Opção inválida!")
 
@@ -85,6 +87,15 @@ Pressione [0] para Sair.
             print("Opção inválida!")
 
     print("Obrigado por utilizar nossos serviços!💰💲")
+
+def nova_operacao(bem_vind_funcao):  
+    entrada = input(("Pressione [S] para realizar uma nova operação: \nPressione [N] para sair. \n"))
+
+    if entrada == "S":
+        bem_vind_funcao()  
+    elif entrada == "N":
+        print('Obrigado pela atenção')
+        exit()
 
 bem_vind0()
 
