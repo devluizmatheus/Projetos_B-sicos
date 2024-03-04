@@ -1,0 +1,5 @@
+Clone seu reoisutório
+Abra o git bash na pasta do projeto
+git add.
+git commit -m 'primeiro commit'
+git push
