@@ -2,22 +2,23 @@ import os
 
 def home():
     global inicio
-    print(
+    inicio = input(
         '============================================================\n'
-        'Quizz de One Pice!!'
+        'Quizz de One Pice!!!\n'
         'Regras:'
         '\n1° Digite apenas a alternativa\n'
         '2° São 3 perguntas\n'
         '3° Você terá apenas uma chance'
         '\n============================================================\n'
-    )
-    inicio = input('Deseja continuar?\n'
+        'Deseja continuar?\n'
         '[S]im\n'
         '[N]ão\n'
-        '==> '.upper()
-)
+        '==> '
+).upper()
+    verificancao()
 def verificancao():
     if inicio == 'S':
+        os.system('cls')
         perguntas()
     elif inicio == 'N':
         os.system('cls')
@@ -86,3 +87,4 @@ def resposta3():
         print('Você errou....')
 
 home()
+
